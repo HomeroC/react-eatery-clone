@@ -1,19 +1,23 @@
 import React from "react";
 import AdBanner from "./AdBanner";
 import { useState, useEffect } from "react";
-import RecipeCard from "../RecipeCard/RecipeCard";
-import { ImSearch } from "react-icons/im";
+import SearchRecipe from "./SearchRecipe";
+import axios from "axios";
+
+
 
 const HomeScreen = () => {
   const [recipes, setRecipes] = useState([]);
   const url = "https://recipes.devmountain.com";
 
-  const getRecipes = async () => {
-    let data = await fetch({ url });
-    let res = await data.json();
-    console.log(res);
-    setRecipes(res);
-  };
+
+  const getRecipes = () => {
+    axios.get(`${url}/recipes`)
+    .then((res) => {
+      setRecipes(res.data);
+      console.log(res.data);
+    })
+  }
 
   useEffect(() => {
     getRecipes();
@@ -22,13 +26,7 @@ const HomeScreen = () => {
   return (
     <div>
       <AdBanner />
-      <div className="search-container">
-        <div className="search-bar">
-          <ImSearch className="search-icon" />
-          <input type="text" placeholder="Search a Recipe" />
-        </div>
-      </div>
-      <RecipeCard />
+      <SearchRecipe recipes={recipes} />
     </div>
   );
 };

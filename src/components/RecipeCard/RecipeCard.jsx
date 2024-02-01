@@ -1,21 +1,25 @@
-import React from 'react'
-import './RecipeCard.css'
+import React from "react";
+import "./RecipeCard.css";
+import { useNavigate } from "react-router-dom";
 
-function RecipeCard() {
+function RecipeCard({ recipe }) {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`'/recipe'/${recipe.recipe_id}`);
+  };
+
   return (
     <div className="recipe-card">
       <div className="recipe-img">
-        <img
-          src="https://www.atablefullofjoy.com/wp-content/uploads/2020/02/German-Chocolate-Cake-Recipe-SQUARE.jpg"
-          alt=""
-        />
-          </div>
-          <h3>
-            German Chocolate Cake
-          </h3>
-          <button className='see-more'>See More</button>
+        <img src={recipe.image_url} />
+      </div>
+      <h3>${recipe.recipe_name}</h3>
+      <button className="see-more" onClick={handleClick}>
+        See More
+      </button>
     </div>
   );
 }
 
-export default RecipeCard
+export default RecipeCard;
