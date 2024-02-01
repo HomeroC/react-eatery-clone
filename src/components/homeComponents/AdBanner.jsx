@@ -23,7 +23,7 @@ const AdBanner = () => {
           This recipe consists of fresh wild Alaskan salmon, rubbed in a bbq
           brown sugar rub, baked for 25 minutes on a bed of pineapple, and garnished in butter, garlic, and chives. You won’t want to miss it!
         </h3>
-        <Link to="/recipe/3">
+        <Link to="/recipe/3" id="check-it-out">
           <button className="blue-btn">Check it out</button>
         </Link>
       </div>

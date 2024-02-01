@@ -6,13 +6,13 @@ function RecipeCard({ recipe }) {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`'/recipe'/${recipe.recipe_id}`);
+    navigate(`/recipe/${recipe.recipe_id}`);
   };
 
   return (
     <div className="recipe-card">
       <div className="recipe-img">
-        <img src={recipe.image_url} />
+        <img src={recipe.image_url} alt=""/>
       </div>
       <h3>${recipe.recipe_name}</h3>
       <button className="see-more" onClick={handleClick}>
