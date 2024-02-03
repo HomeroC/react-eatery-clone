@@ -9,6 +9,7 @@
   color: white;
   background-size: cover;
   margin-bottom: 30px;
+  
 }
 
 .details-container {
@@ -40,4 +41,8 @@
   border-radius: 5px;
   padding: 12px;
   box-sizing: border-box;
+}
+
+p {
+  white-space: pre-wrap;
 }
