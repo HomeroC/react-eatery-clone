@@ -1,1 +1,43 @@
+.ad-banner {
+  width: 100%;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  color: white;
+  background-size: cover;
+  margin-bottom: 30px;
+}
 
+.details-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.details-container h2 {
+  color: black;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 10px;
+}
+
+
+.instructions {
+  max-width: 550px;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.6);
+  box-sizing: border-box;
+  padding: 12px;
+  border-radius: 3px;
+}
+
+.ingredients-container {
+  width: 300px;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.6);
+  border-radius: 5px;
+  padding: 12px;
+  box-sizing: border-box;
+}

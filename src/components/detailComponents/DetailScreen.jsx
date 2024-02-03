@@ -6,7 +6,7 @@ import DetailImage from "./DetailImage";
 
 const DetailScreen = () => {
   const { id } = useParams();
-  // The rest of your component...
+  
   const [recipe, setRecipe] = useState({});
   const url = "https://recipes.devmountain.com";
   console.log(recipe);
@@ -22,6 +22,30 @@ const DetailScreen = () => {
     <div>
       <section>
         <DetailImage image={recipe.image_url} title={recipe.recipe_name} />
+        <div className="details-container">
+          <div className="ingredients-container">
+            <h2>Recipe</h2>
+            <p>Prep Time: {recipe.prep_time}</p>
+            <p>Cook Time: {recipe.cook_time}</p>
+            <p>Serves: {recipe.serves}</p>
+            <br />
+            <h2>Ingredients</h2>
+            {recipe.ingredients &&
+              recipe.ingredients.map((ing, index) => {
+                return (
+                  <h4>
+                    {ing.quantity} {ing.ingredient}
+                  </h4>
+                );
+              })}
+          </div>
+          <div className="instructions">
+            <h2>Instructions</h2>
+            <p style={{ whiteSpace: "pre-wrap" }}>
+              {recipe.instructions && JSON.parse(recipe.instructions)}
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );
